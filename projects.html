@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jada Polard's Projects</title>
+    <!-- Load Font Awesome for icons, as used in your index.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Load Lucide Icons for the project placeholders -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Global Styles (Copied from your provided CSS) */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            /* Light neutral background */
+            color: #1a1a1a;
+            /* Main text color */
+            overflow-x: hidden;
+            font-size: 1.6rem;
+        }
+
+        /* Header (Copied and adapted from your provided CSS) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6rem;
+            padding: 0 9%;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #b74b4b;
+            /* Accent color */
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #b74b4b;
+            border-bottom: 3px solid #b74b4b;
+        }
+
+        /* Section Styles */
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 5rem;
+            /* Top padding to clear header */
+        }
+
+        /* PROJECTS SECTION SPECIFIC STYLES */
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects h2 {
+            font-size: 4rem;
+            /* Adjusted for Poppins/rem scale */
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .projects-grid {
+            display: flex;
+            justify-content: center;
+            /* Center the two cards nicely */
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 80rem;
+            /* Constrain grid width to match original design feel */
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 35rem;
+            /* Set max width for card on larger screens */
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .card-image-placeholder {
+            height: 15rem;
+            background-color: #1a1a1a;
+            /* Dark background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            /* Placeholder text styling (similar to your image) */
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.1em;
+        }
+
+        .card-icon {
+            color: #b74b4b;
+            /* Accent color for icons */
+            opacity: 0.8;
+            width: 5rem;
+            height: 5rem;
+        }
+
+        .card-content {
+            padding: 2.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .card-content p {
+            font-size: 1.5rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            min-height: 7rem;
+            /* Ensures consistent card height */
+        }
+
+        .card-btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border: 2px solid #b74b4b;
+            /* Border in accent color */
+            border-radius: 0.5rem;
+            font-size: 1.4rem;
+            color: #b74b4b;
+            /* Text in accent color */
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .card-btn:hover {
+            background-color: #b74b4b;
+            color: white;
+        }
+
+        /* See All Button Style */
+        .see-all-container {
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        .see-all-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #555;
+            padding: 1rem 3rem;
+            border: 2px solid #ccc;
+            border-radius: 4rem;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .see-all-btn:hover {
+            color: #b74b4b;
+            border-color: #b74b4b;
+            box-shadow: 0 4px 10px rgba(183, 75, 75, 0.2);
+        }
+
+        .see-all-btn i {
+            margin-right: 0.8rem;
+        }
+
+        /* Responsive adjustment for two columns on desktop */
+        @media (min-width: 768px) {
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Responsive for Navigation (Copied from your provided CSS) */
+        @media (max-width: 995px) {
+            nav {
+                position: absolute;
+                display: none;
+                top: 6rem;
+                right: 0;
+                width: 40%;
+                border-left: 3px solid #b74b4b;
+                border-bottom: 3px solid #b74b4b;
+                border-bottom-left-radius: 2rem;
+                padding: 1rem;
+                background-color: #f5f5f5;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+
+            nav a:hover,
+            nav a.active {
+                padding: 1rem;
+                border-radius: 0.5rem;
+                border-bottom: 0.5rem solid #b74b4b;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER (Matching your home page) -->
+    <header>
+        <a href="index.html" class="logo">Jada Polard</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="publications.html">Publications</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects">
+        <div class="projects-container">
+            <!-- Main Title -->
+            <h2>Projects</h2>
+
+            <!-- Projects Grid (Two-column on desktop, one-column on mobile) -->
+            <div class="projects-grid">
+
+                <!-- Project Card 1: XML/Structured Content -->
+                <div class="project-card">
+                    <!-- Screenshot Placeholder: XML/Code -->
+                    <div class="card-image-placeholder">
+                        <i data-lucide="code" class="card-icon"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>XML Project</h3>
+                        <p>Documentation created using XML code</p>
+                        <!-- IMPORTANT: Replace the '#' with your link to the hosted XML or code preview (e.g., GitHub) -->
+                        <a href="https://drive.google.com/file/d/1pO8RbidHYhH4TtxRzpQqzMpK7b2wz1GO/view?usp=sharing"
+                            class="card-btn" target="_blank">
+                            View Schema on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Document Focused -->
+                <div class="project-card">
+                    <!-- Screenshot Placeholder: Document/Writing -->
+                    <div class="card-image-placeholder">
+                        <i data-lucide="book-open" class="card-icon"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>First-Time User Guide</h3>
+                        <p>This document shows you how to create and manage an academic paper using Overleaf</p>
+                        <!-- IMPORTANT: Replace the '#' with your public link to the hosted PDF/Document preview -->
+                        <a href="https://drive.google.com/file/d/1UTmi6z0ueLogW1EMyhAd8RZOmFWrK4UL/view?usp=sharing"
+                            class="card-btn" target="_blank">
+                            View Live Document
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
