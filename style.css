@@ -194,19 +194,19 @@ section {
   }
   21%,
   40% {
-    content: "Instructional Designer";
+    content: "Technical Writer";
   }
   41%,
   60% {
-    content: "Developer";
+    content: "Instructional Designer";
   }
   61%,
   80% {
-    content: "Educator";
+    content: "UX Researcher";
   }
   81%,
   100% {
-    content: "Student";
+    content: "Educator";
   }
 }
 
