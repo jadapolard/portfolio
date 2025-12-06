@@ -190,23 +190,23 @@ section {
 @keyframes words {
   0%,
   20% {
-    content: "Student";
+    content: "Content Designer";
   }
   21%,
   40% {
-    content: "Content Designer";
+    content: "Instructional Designer";
   }
   41%,
   60% {
-    content: "Editor";
+    content: "Developer";
   }
   61%,
   80% {
-    content: "Instructional Designer";
+    content: "Educator";
   }
   81%,
   100% {
-    content: "Teacher";
+    content: "Student";
   }
 }
 
