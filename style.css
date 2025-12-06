@@ -266,7 +266,7 @@ section {
 
 .btn:hover {
   transform: scale3d(1.03);
-  background-color: #a23f3f;
+  background-color: #8b6ab9;
   box-shadow: 0 0 25px #beaed4;
 }
 
